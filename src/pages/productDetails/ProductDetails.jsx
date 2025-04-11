@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import PublicLayout from "../layouts/PublicLayout";
-import LoadingPage from "./LoadingPage";
-import { publicCommunication } from "../communication/publicCommunication";
+import PublicLayout from "../../layouts/PublicLayout";
+import LoadingPage from "../loadingPage/LoadingPage";
+import { publicCommunication } from "../../communication/publicCommunication";
 import styles from "./ProductDetails.module.css";
-import { useAuth } from "../context/AuthContext";
-import ProductCard from "../components/ProductCard";
+import { useAuth } from "../../context/AuthContext";
+import ProductCard from "../../components/ProductCard";
+import NotFoundNoLayout from "../notFound/NotFoundNoLayout";
 
 export default function ProductDetails() {
   const params = useParams();
@@ -51,9 +52,7 @@ export default function ProductDetails() {
       {loading ? (
         <LoadingPage />
       ) : !product?.title ? (
-        <div className={styles.notFound}>
-          <h4>No Product Found !</h4>
-        </div>
+        <NotFoundNoLayout />
       ) : (
         <>
           <div className={styles.container}>

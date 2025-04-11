@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import PublicLayout from "../layouts/PublicLayout";
-import { publicCommunication } from "../communication/publicCommunication";
-import LoadingPage from "./LoadingPage";
+import PublicLayout from "../../layouts/PublicLayout";
+import { publicCommunication } from "../../communication/publicCommunication";
+import LoadingPage from "../loadingPage/LoadingPage";
 import styles from "./Home.module.css";
-import { useAuth } from "../context/AuthContext";
-import ProductCard from "../components/ProductCard";
+import { useAuth } from "../../context/AuthContext";
+import ProductCard from "../../components/ProductCard";
+import NotFoundNoLayout from "../notFound/NotFoundNoLayout";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -18,6 +19,9 @@ export default function Home() {
     const data = await publicCommunication.getAllProducts();
     if (data) {
       setProducts(data);
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
       const cat = [...new Set(data?.map((p) => p.category))];
       setCategories(cat);
       setCurrentCat("");
@@ -34,6 +38,9 @@ export default function Home() {
     if (data) {
       setProducts(data);
       setCurrentCat(cat);
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
     }
   };
 
@@ -45,7 +52,6 @@ export default function Home() {
           p.description.toLowerCase().includes(search) ||
           p.category.toLowerCase().includes(search)
       );
-      setLoading(false);
       return newArr;
     });
   }, [search, products]);
@@ -85,9 +91,7 @@ export default function Home() {
           </div>
         </>
       ) : (
-        <div className={styles.notFound}>
-          <h3>No Result Found !</h3>
-        </div>
+        <NotFoundNoLayout title="No Match Found !" />
       )}
     </PublicLayout>
   );

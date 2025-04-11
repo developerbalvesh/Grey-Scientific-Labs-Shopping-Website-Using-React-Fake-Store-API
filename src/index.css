@@ -9,6 +9,7 @@
   --black: #000;
   --green: #239600;
   --yellow: #fffb00;
+  --light-pink: #fbf7eb;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
   font-family: var(--roboto-font);
 }
 
-input{
+input, button{
   font-family: var(--roboto-font);
 }
 
@@ -30,4 +31,24 @@ html{
 *{
   transition: 200ms;
   box-sizing: border-box;
+}
+
+.hide600{
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .hide600{
+    display: block;
+  }
+}
+
+.show600{
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .show600{
+    display: hidden;
+  }
 }

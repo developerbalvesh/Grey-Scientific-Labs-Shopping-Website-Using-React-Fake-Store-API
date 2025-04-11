@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Login.module.css";
-import PublicLayout from "../layouts/PublicLayout";
 import toast from "react-hot-toast";
-import { publicCommunication } from "../communication/publicCommunication";
-import { useAuth } from "../context/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
-import LoadingPage from "./LoadingPage";
+import LoadingPage from "../loadingPage/LoadingPage";
+import PublicLayout from "../../layouts/PublicLayout";
+import { publicCommunication } from "../../communication/publicCommunication";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Login() {
   const [username, setUsername] = useState("");
