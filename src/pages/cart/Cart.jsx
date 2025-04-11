@@ -5,18 +5,24 @@ import NotFoundNoLayout from "../notFound/NotFoundNoLayout";
 import ProductCardWide from "../../components/ProductCardWide";
 import styles from "./Cart.module.css";
 import Success from "../success/Success";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
-  const { cart, clearCart } = useAuth();
+  const { cart, clearCart, isAuthenticated } = useAuth();
   const [total, setTotal] = useState(0);
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const handleCheckout = () => {
-    clearCart();
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 4000);
+    if (isAuthenticated) {
+      clearCart();
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 4000);
+    }else{
+      navigate("/login")
+    }
   };
 
   // Calculate total price

@@ -21,6 +21,7 @@ export default function AuthProvider({ children }) {
   const logout = () => {
     setToken("");
     setIsAuthenticated(false);
+    navigate("/login")
   };
 
   useEffect(() => {
