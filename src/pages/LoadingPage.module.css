@@ -1,0 +1,14 @@
+.loading {
+  height: calc(100svh - 62px);
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .loading {
+    height: calc(100svh - 99px);
+  }
+}

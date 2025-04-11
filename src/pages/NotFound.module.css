@@ -1,0 +1,6 @@
+.container {
+  height: calc(100svh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

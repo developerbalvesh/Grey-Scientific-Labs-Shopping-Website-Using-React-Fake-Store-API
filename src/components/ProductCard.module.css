@@ -1,0 +1,91 @@
+.card {
+    border-radius: 10px;
+    padding: 10px;
+    width: 180px;
+    /* border: 1px solid var(--primary); */
+    border: 1px solid #d6d6d6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    cursor: default;
+  }
+  
+  .card:hover img {
+    scale: 1.1;
+    cursor: pointer;
+  }
+  
+  .card img {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    object-fit: contain;
+  }
+  
+  .card h4,
+  h5,
+  h6 ,p{
+    margin: 5px 0;
+  }
+
+  .card h4{
+    cursor: pointer;
+  }
+  
+  .card h5 {
+    font-weight: normal;
+    border: 1px solid var(--primary);
+    padding: 2px 4px;
+    border-radius: 10px;
+    cursor: default;
+  }
+  
+  .card h6 {
+    font-weight: 500;
+  }
+  
+  .addCart {
+    color: var(--white);
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    background-color: var(--green);
+    border: 1px solid var(--green);
+    cursor: pointer;
+  }
+  
+  .addCart:hover {
+    color: var(--green);
+    background-color: var(--white);
+    border: 1px solid var(--green);
+  }
+  
+  .added{
+    color: var(--white);
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: default;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+  }
+
+  @media screen and (max-width: 600px) {
+    .card {
+      width: 150px;
+    }
+
+    .card h4{
+        font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .card {
+      width: 100%;
+    }
+  }
