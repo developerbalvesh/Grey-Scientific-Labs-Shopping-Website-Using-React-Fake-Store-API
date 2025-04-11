@@ -47,6 +47,10 @@ export default function AuthProvider({ children }) {
     });
   };
 
+  const clearCart=()=>{
+    setCart([])
+  }
+
   // setting localstorage data when page loads
 
   useEffect(() => {
@@ -82,7 +86,8 @@ export default function AuthProvider({ children }) {
     removeCart,
     isAuthenticated,
     search, 
-    setSearch
+    setSearch,
+    clearCart
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
