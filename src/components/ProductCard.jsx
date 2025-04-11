@@ -15,6 +15,7 @@ export default function ProductCard({ p }) {
         <h4 onClick={()=>navigate(`/product/${p.id}`)}>
           {p.title.slice(0, 12)}{p.title.length>12 && "..."}
         </h4>
+        <p>$ {p.price}</p>
         <h5>{p.category}</h5>
         <h6>
           Rating: {p?.rating?.rate}/5 ({p?.rating?.count})

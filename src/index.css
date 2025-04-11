@@ -8,11 +8,16 @@
   --white: #fff;
   --black: #000;
   --green: #239600;
+  --yellow: #fffb00;
 }
 
 body {
   margin: 0;
   padding: 0;
+  font-family: var(--roboto-font);
+}
+
+input{
   font-family: var(--roboto-font);
 }
 

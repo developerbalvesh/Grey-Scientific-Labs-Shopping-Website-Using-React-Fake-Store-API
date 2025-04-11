@@ -50,7 +50,7 @@ export default function Login() {
     );
   } else
     return (
-      <PublicLayout>
+      <PublicLayout className={styles.outer}>
         <div className={styles.container}>
           <h2>Login</h2>
           <form onSubmit={handleLogin}>

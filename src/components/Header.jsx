@@ -34,17 +34,19 @@ export default function Header() {
         </h1>
         <FaBars onClick={() => setShow(true)} />
       </div>
-      <label>
-        <input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          type="text"
-          placeholder="Search Here..."
-        />
-        <button className={styles.search}>
-          <CiSearch />
-        </button>
-      </label>
+      {location.pathname === "/" && (
+        <label>
+          <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            type="text"
+            placeholder="Search Here..."
+          />
+          <button className={styles.search}>
+            <CiSearch />
+          </button>
+        </label>
+      )}
       <nav ref={navRef} className={show ? styles.show : ""}>
         <ImCross onClick={() => setShow(false)} />
         <NavLink
